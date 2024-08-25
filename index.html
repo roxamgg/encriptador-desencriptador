@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- lenguaje español. -->
+<head>
+    <meta charset="UTF-8"> <!-- caracteres especiales. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- content permite la adaptación de cualquier dispositivo. initial scale es el zoom. -->
+    <title>Aplicativo encriptador/desencriptador texto</title>
+    <link rel="stylesheet" href="./styles/style.css"> <!-- Permite agregar la configuración de CSS. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Iconos para mostrar en la vista. -->
+</head>
+<body>
+    <main class="container"> <!-- Container -->
+        <section class="container-informacion">
+            <h1><strong class="titulo-destaque">AILUFATRAI</strong></h1>
+            <textarea class="container-input" id="valorTexto" cols="30" rows="10" placeholder="Ingrese el texto aquí..."></textarea>
+            <div>
+                <h6 class="informacion"><i class="fas fa-exclamation-circle"></i> Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="botones">
+                <button onclick="btnEncriptar();" class="container-boton">Encriptar</button> <!-- Botón de encriptar. -->
+                <button onclick="btnDesencriptar();" class="container-boton">Desencriptar</button> <!-- Botón de desencriptar. -->
+            </div>
+        </section>
+        <section class="container-respuesta">
+            <textarea class="container-mensaje" id="valorRespuesta" cols="30" rows="10"></textarea>            
+            <div class="mensaje-alternativo-container">
+                <div class="placeholder"></div> <!-- Espacio reservado para mantener el orden de los elementos. -->
+                <p class="mensaje-alternativo">Ningún texto fue encontrado</p>
+                <p class="mensaje-info">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>  
+            <div class="button-container">
+                <div class="placeholder"></div> <!-- Espacio reservado para mantener el orden de los elementos. -->
+                <button id="btnCopiar" onclick="copiarInfo();">Copiar</button> <!-- Botón de copiar. -->
+            </div>           
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Desarrollado por RGG - 2024</p>
+    </footer>
+    <script src="funciones.js"></script> <!-- Permite agregar la configuración de JS. -->
+</body>
+</html>

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); /*Tipo de letra.*/
+
+:root {
+    --primario: #000000;
+    --secundario: #FFF6E0;
+    --montserrat: "Montserrat", sans-serif;     
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../assets/wallpaper.jpeg'); /*Se selecciona el wallpaper de fondo.*/
+    background-size: cover; /*Se ajusta la imagen para cubrir toda el área visible.*/
+    background-position: center; /*Se centra la imagen en el contenedor.*/
+    background-repeat: no-repeat; /*Evita que la imagen se repita.*/
+    background-attachment: fixed;
+    box-sizing: border-box;
+    min-height: 100vh;
+}
+
+.container{
+    display: flex;
+    align-items: flex-start; /*Alinea los elementos al inicio del contenedor.*/
+    padding: 5% 7%; /*top / right / bottom / left*/
+    justify-content: space-between;
+    gap: 5%;    
+}
+
+    .container-informacion, .container-respuesta{
+        width: 50%;
+        display: flex;
+        flex-direction: column; /*Dirección de columna.*/
+        gap: 10px; /*Espacio vertical entre elementos.*/
+        background-color: var(--primario);
+        border-radius: 8px; /*Bordes curvos.*/
+        padding: 2% 5%; /*Ajusta el relleno.*/
+        color: var(--secundario);
+        box-sizing: border-box;
+        position: relative;
+    }
+    
+        .titulo-destaque{
+            font-size: 2.5rem;
+            color: var(--secundario);
+            font-family: var(--montserrat);
+        }
+
+        .container-input, .container-mensaje{
+            width: 100%;
+            box-sizing: border-box;
+            padding: 36px;
+            border-radius: 8px;
+        }        
+
+        .informacion{
+            font-family: var(--montserrat);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .container-mensaje{   
+            height: 200px;
+            background-image: url('../assets/Search.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            color: var(--primario);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 12.5%;
+            border-radius: 8px;
+        }
+
+        .mensaje-alternativo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 5px;
+            color: var(--secundario);
+        }
+
+            .mensaje-alternativo{
+                font-family: var(--montserrat);
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+            
+            .mensaje-info {
+                font-family: var(--montserrat);
+                font-size: 0.6rem;
+            }        
+           
+            .container-boton{
+                padding: 10px 20px;
+                border-radius: 8px; /*Bordes curvos del botón.*/
+                font-family: var(--montserrat);
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--primario);
+                background-color: var(--secundario); /*Color de fondo del botón.*/
+                cursor: pointer;
+                transition: background-color 0.3s; /*Tiempo de transición hover.*/
+                box-sizing: border-box;
+            }    
+            
+            .container-boton:hover {
+                background-color: var(--primario); /*Color de fondo al pasar el ratón.*/
+                color: var(--secundario); /*Color del texto al pasar el ratón.*/
+            }
+      
+        /*Elemento para reservar espacio.*/
+        .placeholder {
+            width: 100%;
+                background: transparent; /*Fondo transparente.*/
+        }
+
+        #btnCopiar {
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: var(--montserrat);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primario);
+            background-color: var(--secundario);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-sizing: border-box;
+            visibility: hidden; /*Oculta el botón inicialmente.*/           
+        }
+
+        /*Muestra el botón si tiene la clase 'visible'.*/
+        #btnCopiar.visible {
+            visibility: visible;
+        }
+    
+.footer{
+    background-color: var(--primario);
+    color: var(--secundario);
+    text-align: center;
+    font-family: var(--montserrat);
+    font-size: 0.6rem;
+    font-weight: 700;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 1200px){  
+
+    .container{
+        flex-direction: column; /*Realiza un cambio de posición en los elementos de la columna.*/
+        gap: 10px;
+        padding: 5%;
+    }
+
+        .container-informacion, .container-respuesta {
+            width: 100%; /*Ajusta el ancho al 100% del contenedor padre.*/
+        }
+
+        .container-mensaje {
+            display: none;
+        }
+
+        .mensaje-alternativo-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            color: var(--secundario);
+        }
+    
+            .mensaje-alternativo,
+            .mensaje-info {
+                display: block; /*Muestra el mensaje alternativo en pantallas pequeñas.*/
+            }
+}
+
